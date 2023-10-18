@@ -12,6 +12,12 @@ import AppleDetail from "../Brands/Apple/AppleDetail";
 import UpdateApple from "../Brands/Apple/UpdateApple";
 import GoogleDetail from "../Brands/Google/GoogleDetail";
 import UpdateGoogle from "../Brands/Google/UpdateGoogle";
+import SamsungDetail from "../Brands/Samsung/SamsungDetail";
+import UpdateSamsung from "../Brands/Samsung/UpdateSamsung";
+import SonyDetail from "../Brands/Sony/SonyDetail";
+import IntelDetail from "../Brands/Intel/IntelDetail";
+import UpdateSony from "../Brands/Sony/UpdateSony";
+import UpdateIntel from "../Brands/Intel/UpdateIntel";
 
 const Router = createBrowserRouter([
     {
@@ -48,13 +54,11 @@ const Router = createBrowserRouter([
     },
 
     // google
-
     {
         path: '/google',
         element: <Google></Google>,
         loader: () => fetch(`http://localhost:5000/google`)
     },
-
     {
         path: '/googleDetail/:id',
         element: <GoogleDetail></GoogleDetail>,
@@ -73,20 +77,62 @@ const Router = createBrowserRouter([
         loader: () => fetch(`http://localhost:5000/samsung`)
     },
     {
+        path: '/samsungDetail/:id',
+        element: <SamsungDetail></SamsungDetail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
+    },
+    {
+        path: '/updateSamsung/:id',
+        element: <UpdateSamsung></UpdateSamsung>,
+        loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
+    },
+
+
+
+    // intel
+    {
         path: '/intel',
         element: <Intel></Intel>,
         loader: () => fetch(`http://localhost:5000/intel`)
     },
     {
-        path: '/mi',
-        element: <Mi></Mi>,
-        loader: () => fetch(`http://localhost:5000/mi`)
+        path: '/intelDetail/:id',
+        element: <IntelDetail></IntelDetail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
     },
+    {
+        path: '/UpdateIntel/:id',
+        element: <UpdateIntel></UpdateIntel>,
+        loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
+    },
+
+
+
+
+    // sony
     {
         path: '/sony',
         element: <Sony></Sony>,
         loader: () => fetch(`http://localhost:5000/sony`)
     },
+    {
+        path: '/sonyDetail/:id',
+        element: <SonyDetail></SonyDetail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
+    },
+    {
+        path: '/UpdateSony/:id',
+        element: <UpdateSony></UpdateSony>,
+        loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
+    },
+
+
+
+    {
+        path: '/mi',
+        element: <Mi></Mi>,
+        loader: () => fetch(`http://localhost:5000/mi`)
+    }
 
 
 ])

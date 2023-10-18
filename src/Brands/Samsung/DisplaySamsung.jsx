@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import { FaEye, FaPen } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-const DisplayAppleProduct = ({ apple }) => {
 
-    const { _id, name, brand, price, photo, rating, type } = apple
-
+const DisplaySamsung = ({ samsung }) => {
+    const { _id, name, brand, price, photo, rating, type } = samsung
     return (
         <div>
             <div className="  bg-base-100 shadow-xl">
@@ -20,10 +19,12 @@ const DisplayAppleProduct = ({ apple }) => {
                     </div>
 
                     <div className='flex flex-col gap-5'>
-                        <Link to={`/${name}/${_id, name}`}>
+                        <Link to={`/samsungDetail/${_id}`}>
                             <button className='btn bg-orange-100 font-bold'><FaEye className='text-lg'></FaEye></button>
                         </Link>
-                        <button className='btn bg-blue-400 text-white font-bold'><FaPen className='text-lg'></FaPen> </button>
+                        <Link to={`/updateSamsung/${_id}`}>
+                            <button className='btn bg-blue-400 text-white font-bold'><FaPen className='text-lg'></FaPen> </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -31,8 +32,8 @@ const DisplayAppleProduct = ({ apple }) => {
     );
 };
 
-DisplayAppleProduct.propTypes = {
-    apple: PropTypes.object
+DisplaySamsung.propTypes = {
+    samsung: PropTypes.object
 };
 
-export default DisplayAppleProduct;
+export default DisplaySamsung;

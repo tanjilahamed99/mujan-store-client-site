@@ -6,7 +6,6 @@ import Navbar from "../../SharedPages/Navbar/Navbar";
 const Apple = () => {
 
     const loadData = useLoaderData()
-    console.log(loadData)
 
     return (
         <div>
