@@ -10,6 +10,8 @@ import Mi from "../Brands/Mi/Mi";
 import Sony from "../Brands/Sony/Sony";
 import AppleDetail from "../Brands/Apple/AppleDetail";
 import UpdateApple from "../Brands/Apple/UpdateApple";
+import GoogleDetail from "../Brands/Google/GoogleDetail";
+import UpdateGoogle from "../Brands/Google/UpdateGoogle";
 
 const Router = createBrowserRouter([
     {
@@ -27,6 +29,8 @@ const Router = createBrowserRouter([
         element: <AddProduct></AddProduct>
 
     },
+
+    // apple
     {
         path: '/apple',
         element: <Apple></Apple>,
@@ -42,11 +46,27 @@ const Router = createBrowserRouter([
         element: <UpdateApple></UpdateApple>,
         loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
     },
+
+    // google
+
     {
         path: '/google',
         element: <Google></Google>,
         loader: () => fetch(`http://localhost:5000/google`)
     },
+
+    {
+        path: '/googleDetail/:id',
+        element: <GoogleDetail></GoogleDetail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/google/${params.id}`)
+    },
+    {
+        path: '/updateGoogle/:id',
+        element: <UpdateGoogle></UpdateGoogle>,
+        loader: ({ params }) => fetch(`http://localhost:5000/google/${params.id}`)
+    },
+
+    // samsung
     {
         path: '/samsung',
         element: <Samsung></Samsung>,
