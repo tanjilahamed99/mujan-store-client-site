@@ -1,0 +1,26 @@
+[
+    {
+        "name": "apple",
+        "image": "https://i.ibb.co/PQVxqYK/pngwing-com-6.png"
+    },
+    {
+        "name": "google",
+        "image": "https://i.ibb.co/ZGknsNg/pngwing-com-5.png"
+    },
+    {
+        "name": "samsung",
+        "image": "https://i.ibb.co/Sfgs79w/pngwing-com-7.png"
+    },
+    {
+        "name": "intel",
+        "image": "https://i.ibb.co/bb48SgD/pngwing-com-9.png"
+    },
+    {
+        "name": "sony",
+        "image": "https://i.ibb.co/pn27fG6/pngwing-com-8.png"
+    },
+    {
+        "name": "mi",
+        "image": "https://i.ibb.co/gtx5dkL/pngwing-com-10.png"
+    }
+]

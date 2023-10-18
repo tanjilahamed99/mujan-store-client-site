@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root/Root";
 import Home from "../Pages/Home/Home";
-import Apple from "../Brands/Apple/Apple";
+import Apple from "../Brands/Brands";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 
 const Router = createBrowserRouter([
@@ -16,9 +16,9 @@ const Router = createBrowserRouter([
         ],
     },
     {
-        path: '/apple',
+        path: '/brand/:name',
         element: <Apple></Apple>,
-        loader: () => fetch('http://localhost:5000/iphone')
+        loader: ({ params }) => fetch(`http://localhost:5000/${params.name}`)
     },
     {
         path: '/addproduct',
