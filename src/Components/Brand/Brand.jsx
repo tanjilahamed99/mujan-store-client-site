@@ -18,7 +18,7 @@ const Brand = () => {
             <div className="grid grid-cols-3 items-center gap-10 w-[80%] mx-auto">
                 {
                     brands.map((brand, idx) =>
-                        <Link to={`/brand/${brand.name}`} key={idx}>
+                        <Link to={`/${brand.name}`} key={idx}>
                             <div className="shadow-lg hover:shadow-xl text-center p-10 mx-auto">
                                 <img className="w-[200px] h-[200px] mx-auto"
                                     src={brand.image} alt="" />
