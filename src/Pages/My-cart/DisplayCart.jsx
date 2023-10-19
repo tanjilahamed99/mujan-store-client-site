@@ -41,7 +41,7 @@ const DisplayCart = ({ cart, setCartData, cartData }) => {
     return (
         <div>
             <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
-                <div className=" p-10 my-20 items-center">
+                <div className=" md:p-10 p-5 md:my-20 items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
                     <div className="space-y-2">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
@@ -49,7 +49,7 @@ const DisplayCart = ({ cart, setCartData, cartData }) => {
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-                        <button onClick={() => handleDelete(_id)} className='btn w-full'>Delate</button>
+                        <button onClick={() => handleDelete(_id)} className='btn w-full btn-outline'>Delate</button>
                     </div>
                 </div>
             </div>

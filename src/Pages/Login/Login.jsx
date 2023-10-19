@@ -71,7 +71,7 @@ const Login = () => {
                             <div className="text-center">
                                 <h1 className="text-5xl font-bold text-white">Login now!</h1>
                             </div>
-                            <div className="card flex-shrink-0 w-[35%]  mx-auto mt-4 shadow-2xl bg-base-100">
+                            <div className="card flex-shrink-0 xl:w-[35%] md:w-1/2 lg:w-[40%]    mx-auto mt-4 shadow-2xl bg-base-100">
                                 <form onSubmit={handleLogin} className="card-body text-black">
                                     <div className="form-control">
                                         <label className="label">
@@ -103,7 +103,7 @@ const Login = () => {
                                 <p className="mb-3">Or</p>
                                 <hr className="w-[35%] mx-auto" />
                             </div>
-                            <button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white w-[35%]">
+                            <button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white xl:w-[35%] md:w-1/2 lg:w-[40%]">
                                 <FaGoogle></FaGoogle>
                                 google</button>
                         </div>

@@ -9,7 +9,7 @@ const Intel = () => {
         <div>
             <Navbar></Navbar>
             <BrandBanner></BrandBanner>
-            <div className="grid grid-cols-2 items-center gap-5 container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 container mx-auto">
                 {
                     loadData.map(intel => <DisplayIntel key={intel._id} intel={intel}></DisplayIntel>)
                 }

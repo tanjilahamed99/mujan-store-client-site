@@ -38,7 +38,7 @@ const AppleDetail = () => {
                 <FaArrowAltCircleLeft className="text-lg"></FaArrowAltCircleLeft>
                 Go back</button></Link>
             <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
-                <div className="flex p-10 gap-5 justify-center my-20 items-center">
+                <div className="flex flex-col md:flex-row p-5 lg::p-10  justify-center my-20 items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
                     <div className="space-y-2">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>

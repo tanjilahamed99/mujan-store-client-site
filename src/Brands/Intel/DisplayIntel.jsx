@@ -9,7 +9,7 @@ const DisplayIntel = ({ intel }) => {
     return (
         <div>
             <div className="  bg-base-100 shadow-xl">
-                <div className="flex justify-between p-10 items-center">
+                <div className="flex flex-col lg:flex-row justify-between p-10 items-center">
                     <img className='w-[200px] h-[200px]' src={photo} alt="" />
                     <div>
                         <h2 className='font-bold text-xl'>Name: {name}</h2>
@@ -19,7 +19,7 @@ const DisplayIntel = ({ intel }) => {
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>  
                     </div>
 
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex mt-4 lg:mt-0 lg:flex-col gap-5'>
                         <Link to={`/intelDetail/${_id}`}>
                             <button className='btn bg-orange-100 font-bold'><FaEye className='text-lg'></FaEye></button>
                         </Link>

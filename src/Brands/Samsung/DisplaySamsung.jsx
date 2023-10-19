@@ -7,7 +7,7 @@ const DisplaySamsung = ({ samsung }) => {
     return (
         <div>
             <div className="  bg-base-100 shadow-xl">
-                <div className="flex justify-between p-10 items-center">
+                <div className="flex flex-col lg:flex-row justify-between p-10 items-center">
                     <img className='w-[200px] h-[200px]' src={photo} alt="" />
                     <div>
                         <h2 className='font-bold text-xl'>Name: {name}</h2>
@@ -18,7 +18,7 @@ const DisplaySamsung = ({ samsung }) => {
 
                     </div>
 
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex flex-row lg:flex-col mt-5 lg:mt-0 gap-5'>
                         <Link to={`/samsungDetail/${_id}`}>
                             <button className='btn bg-orange-100 font-bold'><FaEye className='text-lg'></FaEye></button>
                         </Link>

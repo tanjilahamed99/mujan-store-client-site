@@ -91,9 +91,9 @@ const Registration = () => {
                     <div className=" w-full">
                         <div className="w-full">
                             <div className="text-center">
-                                <h1 className="text-5xl font-bold text-white">Create account</h1>
+                                <h1 className="md:text-5xl text-3xl font-bold text-white">Create account</h1>
                             </div>
-                            <div className="card flex-shrink-0 w-[35%]  mx-auto mt-4 shadow-2xl bg-base-100">
+                            <div className="card flex-shrink-0 xl:w-[35%] md:w-[50%] lg:w-[40%] mx-auto mt-4 shadow-2xl bg-base-100">
                                 <form onSubmit={handleCreateAccount} className="card-body text-black">
                                     <div className="form-control">
                                         <label className="label">
@@ -134,7 +134,7 @@ const Registration = () => {
                                 <p className="mb-3">Or</p>
                                 <hr className="w-[35%] mx-auto" />
                             </div>
-                            <button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white w-[35%]">
+                            <button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white lg:w-[40%] md:w-[50%] xl:w-[35%]">
                                 <FaGoogle></FaGoogle>
                                 google</button>
                         </div>

@@ -15,7 +15,7 @@ const Brand = () => {
             <p className="text-center text-lg font-medium">--brands--</p>
             <h2 className="text-center text-2xl font-extrabold "> Our Top brands</h2>
 
-            <div className="grid grid-cols-3 items-center gap-10 w-[80%] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  items-center gap-10 w-[80%] mx-auto">
                 {
                     brands.map((brand, idx) =>
                         <Link to={`/${brand.name}`} key={idx}>

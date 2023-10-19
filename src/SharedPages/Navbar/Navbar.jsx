@@ -74,8 +74,8 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-300 px-5">
-            <div className="navbar-start">
+        <div className="navbar bg-base-300  md:px-5">
+            <div className="navbar-start items-center">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -86,8 +86,12 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <img className="w-16" src="https://i.ibb.co/whhFGb2/pngwing-com-1.png" alt="" />
-                <a className="btn btn-ghost normal-case text-xl">MUJAN STORE</a>
+                <div className="flex items-center">
+                    <img className="md:w-16 w-10" src="https://i.ibb.co/whhFGb2/pngwing-com-1.png" alt="" />
+                    <div className="hidden md:block">
+                        <a className="btn btn-ghost  normal-case md:text-xl ">MUJAN STORE</a>
+                    </div>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-medium">
@@ -97,16 +101,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <div className="flex items-center text-white  gap-2 bg-black rounded-lg py-1 px-3">
+                <div className="flex items-center text-white  gap-2 bg-black rounded-lg md:py-1 md:px-3">
                     {
                         user && <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
                     }
                     {
-                        user && <h2>{user.displayName}</h2>
+                        user && <h2 className="hidden md:block">{user.displayName}</h2>
                     }
                 </div>
                 {
-                    user ? <button onClick={handleLOgout} className="btn btn-outline">logout</button> : <Link to={'/login'}><button className="btn">Login</button></Link>
+                    user ? <button onClick={handleLOgout} className="md:btn md:btn-outline">logout</button> : <Link to={'/login'}><button className="btn">Login</button></Link>
                 }
             </div>
         </div>
