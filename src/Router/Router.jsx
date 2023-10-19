@@ -21,11 +21,14 @@ import UpdateIntel from "../Brands/Intel/UpdateIntel";
 import MyCart from "../Pages/My-cart/MyCart";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement:<ErrorPage></ErrorPage> ,
         children: [
             {
                 path: '/',
@@ -33,7 +36,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/addproduct',
-                element: <AddProduct></AddProduct>
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
         ],
     },
@@ -49,7 +52,7 @@ const Router = createBrowserRouter([
 
     {
         path: '/cart',
-        element: <MyCart></MyCart>,
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/cart')
     },
 
@@ -62,12 +65,12 @@ const Router = createBrowserRouter([
     },
     {
         path: '/appleDetail/:id',
-        element: <AppleDetail></AppleDetail>,
+        element: <PrivateRoute><AppleDetail></AppleDetail></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
     },
     {
         path: '/updateApple/:id',
-        element: <UpdateApple></UpdateApple>,
+        element: <PrivateRoute><UpdateApple></UpdateApple></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
     },
 
@@ -79,12 +82,12 @@ const Router = createBrowserRouter([
     },
     {
         path: '/googleDetail/:id',
-        element: <GoogleDetail></GoogleDetail>,
+        element: <PrivateRoute><GoogleDetail></GoogleDetail></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/google/${params.id}`)
     },
     {
         path: '/updateGoogle/:id',
-        element: <UpdateGoogle></UpdateGoogle>,
+        element: <PrivateRoute><UpdateGoogle></UpdateGoogle></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/google/${params.id}`)
     },
 
@@ -96,12 +99,12 @@ const Router = createBrowserRouter([
     },
     {
         path: '/samsungDetail/:id',
-        element: <SamsungDetail></SamsungDetail>,
+        element: <PrivateRoute><SamsungDetail></SamsungDetail></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
     },
     {
         path: '/updateSamsung/:id',
-        element: <UpdateSamsung></UpdateSamsung>,
+        element: <PrivateRoute><UpdateSamsung></UpdateSamsung></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
     },
 
@@ -115,12 +118,12 @@ const Router = createBrowserRouter([
     },
     {
         path: '/intelDetail/:id',
-        element: <IntelDetail></IntelDetail>,
+        element: <PrivateRoute><IntelDetail></IntelDetail></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
     },
     {
         path: '/UpdateIntel/:id',
-        element: <UpdateIntel></UpdateIntel>,
+        element: <PrivateRoute><UpdateIntel></UpdateIntel></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
     },
 
@@ -132,12 +135,12 @@ const Router = createBrowserRouter([
     },
     {
         path: '/sonyDetail/:id',
-        element: <SonyDetail></SonyDetail>,
+        element: <PrivateRoute><SonyDetail></SonyDetail></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
     },
     {
         path: '/UpdateSony/:id',
-        element: <UpdateSony></UpdateSony>,
+        element: <PrivateRoute><UpdateSony></UpdateSony></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
     },
 

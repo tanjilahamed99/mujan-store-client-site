@@ -1,5 +1,6 @@
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateSony = () => {
 
@@ -16,7 +17,6 @@ const UpdateSony = () => {
         const type = form.type.value
         const rating = form.rating.value
         const updateProduct = { name, brand, price, photo, rating, type }
-        console.log(updateProduct)
 
 
         fetch(`http://localhost:5000/sony/${_id}`, {
@@ -28,7 +28,13 @@ const UpdateSony = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire(
+                        'success!',
+                        'successful update.',
+                        'success'
+                    )
+                }
             })
     }
 

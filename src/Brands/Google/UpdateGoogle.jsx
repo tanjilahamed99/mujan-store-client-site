@@ -1,5 +1,6 @@
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateGoogle = () => {
 
@@ -27,7 +28,13 @@ const UpdateGoogle = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire(
+                        'success!',
+                        'successful update.',
+                        'success'
+                    )
+                }
             })
     }
 

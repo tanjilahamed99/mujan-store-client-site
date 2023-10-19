@@ -33,7 +33,7 @@ const Navbar = () => {
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "" : ""
+                    isPending ? "pending" : isActive ? "bg-purple-200" : ""
                 }
             >
                 Home
@@ -43,7 +43,7 @@ const Navbar = () => {
             <NavLink
                 to="/addproduct"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "" : ""
+                    isPending ? "pending" : isActive ? "bg-purple-200" : ""
                 }
             >
                 Add Product
@@ -53,10 +53,20 @@ const Navbar = () => {
             <NavLink
                 to="/cart"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "" : ""
+                    isPending ? "pending" : isActive ? "bg-purple-200" : ""
                 }
             >
                 My Cart
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/registration"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "bg-purple-200" : ""
+                }
+            >
+                Registration
             </NavLink>
         </li>
 
@@ -64,7 +74,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 px-5">
+        <div className="navbar bg-base-300 px-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -87,7 +97,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <div className="flex items-center text-white  gap-2 bg-black rounded-lg px-3">
+                <div className="flex items-center text-white  gap-2 bg-black rounded-lg py-1 px-3">
                     {
                         user && <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
                     }
