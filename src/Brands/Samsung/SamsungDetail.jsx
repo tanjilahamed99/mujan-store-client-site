@@ -1,8 +1,37 @@
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 const SamsungDetail = () => {
 
     const { name, brand, price, photo, rating, type } = useLoaderData()
+
+
+    const handleAddCart = (name, brand, price, photo, rating, type) => {
+
+        const addCart = { name, brand, price, photo, rating, type }
+        console.log(addCart)
+
+        fetch('http://localhost:5000/cart', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(addCart)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'Good job!',
+                        'successful added to cart!',
+                        'success'
+                    )
+                }
+            })
+
+    }
+
+
 
     return (
         <div>
@@ -18,7 +47,7 @@ const SamsungDetail = () => {
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-
+                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn">Add to cart</button>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,16 @@ const AddProduct = () => {
         const newProduct = { name, brand, price, photo, rating, type }
         console.log(newProduct)
 
+        fetch('http://localhost:5000/client', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+
 
     }
 
@@ -44,7 +54,7 @@ const AddProduct = () => {
                             <h2>Rating</h2>
                             <input required name="rating" type="text" placeholder="5" className="input text-black input-bordered w-full " />
                         </div>
-                        <div className="col-span-2">
+                        <div className="">
                             <h2>image URL</h2>
                             <input required name="photo" type="text" placeholder="https:" className="input text-black input-bordered w-full " />
                         </div>

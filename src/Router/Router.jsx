@@ -18,6 +18,7 @@ import SonyDetail from "../Brands/Sony/SonyDetail";
 import IntelDetail from "../Brands/Intel/IntelDetail";
 import UpdateSony from "../Brands/Sony/UpdateSony";
 import UpdateIntel from "../Brands/Intel/UpdateIntel";
+import MyCart from "../Pages/My-cart/MyCart";
 
 const Router = createBrowserRouter([
     {
@@ -27,14 +28,20 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
-            }
+            },
+            {
+                path: '/addproduct',
+                element: <AddProduct></AddProduct>
+            },
         ],
     },
-    {
-        path: '/addproduct',
-        element: <AddProduct></AddProduct>
 
+    {
+        path:'/cart',
+        element:<MyCart></MyCart>,
+        loader:()=>fetch('http://localhost:5000/cart')
     },
+
 
     // apple
     {
@@ -106,9 +113,6 @@ const Router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
     },
 
-
-
-
     // sony
     {
         path: '/sony',
@@ -125,8 +129,6 @@ const Router = createBrowserRouter([
         element: <UpdateSony></UpdateSony>,
         loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
     },
-
-
 
     {
         path: '/mi',

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 const DisplayIntel = ({ intel }) => {
     const { _id, name, brand, price, photo, rating, type } = intel
+
+
     return (
         <div>
             <div className="  bg-base-100 shadow-xl">
@@ -14,8 +16,7 @@ const DisplayIntel = ({ intel }) => {
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-
+                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>  
                     </div>
 
                     <div className='flex flex-col gap-5'>
