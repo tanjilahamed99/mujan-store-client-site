@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebase";
+import Swal from "sweetalert2";
 
 const Registration = () => {
 
     const [see, setSee] = useState(false)
+    const navigate = useNavigate()
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser,googleLogin } = useContext(AuthContext)
 
     const handleCreateAccount = e => {
         e.preventDefault()
@@ -20,8 +22,12 @@ const Registration = () => {
         const password = form.password.value
 
         createUser(email, password)
-            .then((result) => {
-                console.log(result)
+            .then(() => {
+                Swal.fire(
+                    'success!',
+                    'successful create account.',
+                    'success'
+                )
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: image
                 })
@@ -31,9 +37,38 @@ const Registration = () => {
                     .catch(error => {
                         console.log(error.message)
                     })
+                navigate('/')
             })
-            .catch(error => console.log(error.message))
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'error'
+                })
+            })
     }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                Swal.fire(
+                    'success!',
+                    'successful login.',
+                    'success'
+                )
+                navigate('/')
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'error'
+                })
+            })
+    }
+
 
 
     return (
@@ -86,7 +121,7 @@ const Registration = () => {
                             <p className="mb-3">Or</p>
                             <hr className="w-[35%] mx-auto" />
                         </div>
-                        <button className="btn bg-purple-600 text-white w-[35%]">
+                        <button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white w-[35%]">
                             <FaGoogle></FaGoogle>
                             google</button>
                     </div>

@@ -1,27 +1,71 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
     const [see, setSee] = useState(false)
+    const { loginUser, googleLogin } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target
         const email = form.email.value
         const password = form.password.value
-        
-        console.log(email,password)
+        console.log(email, password)
+
+        loginUser(email, password)
+            .then(() => {
+                Swal.fire(
+                    'success!',
+                    'successful login.',
+                    'success'
+                )
+                navigate('/')
+            })
+            .catch((error) => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'error'
+                })
+            })
+
+    }
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                Swal.fire(
+                    'success!',
+                    'successful login.',
+                    'success'
+                )
+                navigate('/')
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'error'
+                })
+            })
     }
 
 
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/TKf5SkS/sean-oulashin-KMn4-VEe-EPR8-unsplash.jpg)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content w-full text-center text-neutral-content">
-                <div className=" w-full">
+            <div className="hero-content w-full  text-neutral-content">
+                <div className=" w-full text-center">
                     <div className="w-full">
+
                         <div className="text-center">
                             <h1 className="text-5xl font-bold text-white">Login now!</h1>
                         </div>
@@ -57,7 +101,7 @@ const Login = () => {
                             <p className="mb-3">Or</p>
                             <hr className="w-[35%] mx-auto" />
                         </div>
-                        <button className="btn bg-purple-600 text-white w-[35%]">
+                        <button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white w-[35%]">
                             <FaGoogle></FaGoogle>
                             google</button>
                     </div>

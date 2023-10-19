@@ -27,7 +27,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: 'url()' }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/gSqs3zN/javier-allegue-barros-Kr3-Ls8-Tw8h4-unsplash.jpg)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-neutral-content">
                 <div className=" w-[50%] p-10 mx-auto  text-neutral-content">
