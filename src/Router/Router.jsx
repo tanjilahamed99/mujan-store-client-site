@@ -19,6 +19,8 @@ import IntelDetail from "../Brands/Intel/IntelDetail";
 import UpdateSony from "../Brands/Sony/UpdateSony";
 import UpdateIntel from "../Brands/Intel/UpdateIntel";
 import MyCart from "../Pages/My-cart/MyCart";
+import Login from "../Pages/Login/Login";
+import Registration from "../Pages/Registration/Registration";
 
 const Router = createBrowserRouter([
     {
@@ -37,9 +39,18 @@ const Router = createBrowserRouter([
     },
 
     {
-        path:'/cart',
-        element:<MyCart></MyCart>,
-        loader:()=>fetch('http://localhost:5000/cart')
+        path: '/login',
+        element: <Login></Login>
+    },
+    {
+        path: '/registration',
+        element: <Registration></Registration>
+    },
+
+    {
+        path: '/cart',
+        element: <MyCart></MyCart>,
+        loader: () => fetch('http://localhost:5000/cart')
     },
 
 
