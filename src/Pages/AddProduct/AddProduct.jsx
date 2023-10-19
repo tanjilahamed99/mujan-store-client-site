@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
 
 
@@ -13,7 +15,7 @@ const AddProduct = () => {
         const newProduct = { name, brand, price, photo, rating, type }
         console.log(newProduct)
 
-        fetch('http://localhost:5000/client', {
+        fetch('https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/client', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -21,7 +23,15 @@ const AddProduct = () => {
             body: JSON.stringify(newProduct)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'success!',
+                        'successful added product.',
+                        'success'
+                    )
+                }
+            })
 
 
     }

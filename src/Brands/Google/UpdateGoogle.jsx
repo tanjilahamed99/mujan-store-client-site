@@ -19,7 +19,7 @@ const UpdateGoogle = () => {
         console.log(updateProduct)
 
 
-        fetch(`http://localhost:5000/google/${_id}`, {
+        fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/google/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

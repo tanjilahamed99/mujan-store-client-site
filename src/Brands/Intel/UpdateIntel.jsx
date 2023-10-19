@@ -20,7 +20,7 @@ const UpdateIntel = () => {
         console.log(updateProduct)
 
 
-        fetch(`http://localhost:5000/intel/${_id}`, {
+        fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/intel/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

@@ -19,7 +19,7 @@ const UpdateSamsung = () => {
         console.log(updateProduct)
 
 
-        fetch(`http://localhost:5000/samsung/${_id}`, {
+        fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/samsung/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

@@ -19,7 +19,7 @@ const UpdateSony = () => {
         const updateProduct = { name, brand, price, photo, rating, type }
 
 
-        fetch(`http://localhost:5000/sony/${_id}`, {
+        fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/sony/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

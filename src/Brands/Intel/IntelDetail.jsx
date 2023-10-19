@@ -11,7 +11,7 @@ const IntelDetail = () => {
         const addCart = { name, brand, price, photo, rating, type }
         console.log(addCart)
 
-        fetch('http://localhost:5000/cart', {
+        fetch('https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/cart', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
