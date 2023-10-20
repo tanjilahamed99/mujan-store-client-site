@@ -1,4 +1,7 @@
 import PropTypes from 'prop-types';
+import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai';
+import { FaStarHalfAlt } from 'react-icons/fa';
+import Rating from 'react-rating';
 import Swal from 'sweetalert2';
 
 const DisplayCart = ({ cart, setCartData, cartData }) => {
@@ -47,7 +50,13 @@ const DisplayCart = ({ cart, setCartData, cartData }) => {
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
+                        <Rating
+                            placeholderRating={rating}
+                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                        />
+
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
                         <button onClick={() => handleDelete(_id)} className='btn w-full btn-outline'>Delate</button>
                     </div>

@@ -15,7 +15,7 @@ const AddProduct = () => {
         const newProduct = { name, brand, price, photo, rating, type }
         console.log(newProduct)
 
-        fetch(`https://mujan-store-server-site-opzo7kt6n-tanjil-ahameds-projects.vercel.app/${brand}`, {
+        fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/${brand}`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -23,6 +23,8 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import MiDetail from "../Brands/Mi/miDetail";
+import UpdateMi from "../Brands/Mi/UpdateMi";
 
 const Router = createBrowserRouter([
     {
@@ -147,8 +149,18 @@ const Router = createBrowserRouter([
     {
         path: '/mi',
         element: <Mi></Mi>,
-        loader: () => fetch(`https://mujan-store-server-site-8nuv8w885-tanjil-ahameds-projects.vercel.app/mi`)
-    }
+        loader: () => fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/mi`)
+    },
+    {
+        path: '/miDetail/:id',
+        element: <PrivateRoute><MiDetail></MiDetail></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/mi/${params.id}`)
+    },
+    {
+        path: '/UpdateMi/:id',
+        element: <PrivateRoute><UpdateMi></UpdateMi></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/mi/${params.id}`)
+    },
 
 
 ])
