@@ -60,7 +60,7 @@ const DisplayCart = ({ cart, setCartData, cartData }) => {
 DisplayCart.propTypes = {
     cart: PropTypes.object,
     setCartData: PropTypes.func,
-    cartData: PropTypes.object
+    cartData: PropTypes.array
 };
 
 export default DisplayCart;

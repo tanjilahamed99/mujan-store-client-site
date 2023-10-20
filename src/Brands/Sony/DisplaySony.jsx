@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import { FaEye, FaPen } from "react-icons/fa";
+import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai';
+import { FaEye, FaPen, FaStarHalfAlt } from "react-icons/fa";
+import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
 
 const DisplaySony = ({ sony }) => {
@@ -13,7 +15,12 @@ const DisplaySony = ({ sony }) => {
                         <h2 className='font-bold text-xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
+                        <Rating
+                            placeholderRating={rating}
+                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                        />
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
 
                     </div>
