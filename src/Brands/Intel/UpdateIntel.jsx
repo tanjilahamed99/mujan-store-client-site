@@ -5,22 +5,23 @@ import Swal from "sweetalert2";
 const UpdateIntel = () => {
 
 
-    const { _id, name, brand, price, photo, rating, type } = useLoaderData()
+    const { _id, name, brand, price, photo, rating, type,desc } = useLoaderData()
 
     const handleUpdateProduct = e => {
         e.preventDefault()
         const form = e.target
         const name = form.name.value
+        const desc = form.desc.value
         const brand = form.brand.value
         const price = form.price.value
         const photo = form.photo.value
         const type = form.type.value
         const rating = form.rating.value
-        const updateProduct = { name, brand, price, photo, rating, type }
+        const updateProduct = { name, brand, price, photo, rating, type,desc }
         console.log(updateProduct)
 
 
-        fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/intel/${_id}`, {
+        fetch(`https://mujan-store-server-site-3w2dpawqk-tanjil-ahameds-projects.vercel.app/intel/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -76,6 +77,10 @@ const UpdateIntel = () => {
                         <div className="col-span-2 md:col-span-1">
                             <h2>image URL</h2>
                             <input required defaultValue={photo} name="photo" type="text" placeholder="https:" className="input text-black input-bordered w-full " />
+                        </div>
+                        <div className="col-span-2">
+                            <h2>short description</h2>
+                            <textarea name="desc" defaultValue={desc} className="textarea textarea-bordered w-full text-black" placeholder="description"></textarea>
                         </div>
                         <button className="btn col-span-2 btn-accent">Update</button>
                     </form>

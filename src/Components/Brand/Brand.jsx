@@ -15,14 +15,14 @@ const Brand = () => {
             <p className="text-center text-lg font-medium">--brands--</p>
             <h2 className="text-center text-2xl font-extrabold "> Our Top brands</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  items-center gap-10 w-[80%] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5  items-center gap-10 w-[80%] mx-auto">
                 {
                     brands.map((brand, idx) =>
                         <Link to={`/${brand.name}`} key={idx}>
-                            <div className="shadow-lg hover:shadow-xl text-center p-10 mx-auto">
+                            <div className="shadow-lg bg-white hover:shadow-xl text-center p-10 mx-auto">
                                 <img className="w-[200px] h-[200px] mx-auto"
                                     src={brand.image} alt="" />
-                                <h2 className="font-bold text-2xl mt-2 ">{brand.name}</h2>
+                                <h2 className="font-bold text-2xl mt-2 text-black">{brand.name}</h2>
                             </div>
                         </Link>)
                 }

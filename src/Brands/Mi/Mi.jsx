@@ -1,18 +1,18 @@
 import BrandBanner from "../Brand-banner/BrandBanner";
-import { useLoaderData } from "react-router-dom";
 import Navbar from "../../SharedPages/Navbar/Navbar";
-import DisplayMi from "./DisplayMi";
+import Footer from "../../SharedPages/Footer/Footer";
 const Mi = () => {
-    const loadData = useLoaderData()
     return (
         <div>
             <Navbar></Navbar>
             <BrandBanner></BrandBanner>
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 container mx-auto">
-                {
-                    loadData.map(mi => <DisplayMi key={mi._id} mi={mi}></DisplayMi>)
-                }
+
+            <div className="lg:my-52 my-10 text-center space-y-3 ">
+                <h1 className="font-bold text-4xl">No product available right now  </h1>
+                <p className="font-medium text-xl">coming soon......</p>
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };

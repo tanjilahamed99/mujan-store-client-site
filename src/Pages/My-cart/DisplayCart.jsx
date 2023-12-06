@@ -20,7 +20,7 @@ const DisplayCart = ({ cart, setCartData, cartData }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/cart/${_id}`, {
+                fetch(`https://mujan-store-server-site-3w2dpawqk-tanjil-ahameds-projects.vercel.app/cart/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -42,27 +42,28 @@ const DisplayCart = ({ cart, setCartData, cartData }) => {
 
 
     return (
-        <div>
-            <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
-                <div className=" md:p-10 p-5 md:my-20 items-center">
+            <div className="bg-base-100  shadow-xl mx-auto rounded-lg border ">
+                <div className="p-10  items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
-                    <div className="space-y-2">
+                    <div className="space-y-3 mt-3">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
+                        <div className='flex justify-between'>
+                            <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
+                            <h2 className='text-lg flex gap-1'><span className='font-bold '>Type:</span>{type}</h2>
+                        </div>
                         <Rating
+                            className='text-yellow-400'
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-2xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-2xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-2xl'></FaStarHalfAlt>}
                         />
 
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-                        <button onClick={() => handleDelete(_id)} className='btn w-full btn-outline'>Delate</button>
+                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>${price}</h2>
+                        <button onClick={() => handleDelete(_id)} className='btn w-full btn-outline text-red-600'>Delate</button>
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

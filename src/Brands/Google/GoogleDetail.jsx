@@ -1,19 +1,22 @@
+import { useContext } from "react";
 import { AiOutlineStar, AiTwotoneStar } from "react-icons/ai";
 import { FaArrowAltCircleLeft, FaStarHalfAlt } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const GoogleDetail = () => {
 
-    const { name, brand, price, photo, rating, type } = useLoaderData()
+    const { name, brand, price, photo, rating, type, desc } = useLoaderData()
 
-    const handleAddCart = (name, brand, price, photo, rating, type) => {
+    const { user } = useContext(AuthContext)
 
-        const addCart = { name, brand, price, photo, rating, type }
-        console.log(addCart)
+    const handleAddCart = (name, brand, price, photo, rating, type, desc) => {
 
-        fetch('https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/cart', {
+        const addCart = { name, brand, price, photo, rating, type, desc, email: user?.email }
+
+        fetch('https://mujan-store-server-site-3w2dpawqk-tanjil-ahameds-projects.vercel.app/cart', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -54,6 +57,10 @@ const GoogleDetail = () => {
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
                         <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn">Add to cart</button>
                     </div>
+                </div>
+                <div className="text-center space-y-2 pb-20">
+                    <h2 className="font-bold text-2xl">short description</h2>
+                    <p className="lg:mx-52">{desc}</p>
                 </div>
             </div>
         </div>

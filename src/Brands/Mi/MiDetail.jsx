@@ -38,7 +38,7 @@ const MiDetail = () => {
 
     return (
         <div>
-            <Link className="pl-10 " to={'/sony'}><button className="btn my-5 btn-outline">
+            <Link className="pl-10 " to={'/mi'}><button className="btn my-5 btn-outline">
                 <FaArrowAltCircleLeft className="text-lg"></FaArrowAltCircleLeft>
                 Go back</button></Link>
             <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">

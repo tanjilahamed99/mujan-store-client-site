@@ -23,8 +23,8 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import MiDetail from "../Brands/Mi/miDetail";
-import UpdateMi from "../Brands/Mi/UpdateMi";
+
+
 
 const Router = createBrowserRouter([
     {
@@ -54,8 +54,7 @@ const Router = createBrowserRouter([
 
     {
         path: '/cart',
-        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/cart')
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
     },
 
 
@@ -63,51 +62,51 @@ const Router = createBrowserRouter([
     {
         path: '/apple',
         element: <Apple></Apple>,
-        loader: () => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/apple`)
+        loader: () => fetch(`http://localhost:5000/apple`)
     },
     {
         path: '/appleDetail/:id',
         element: <PrivateRoute><AppleDetail></AppleDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/apple/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
     },
     {
         path: '/updateApple/:id',
         element: <PrivateRoute><UpdateApple></UpdateApple></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/apple/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
     },
 
     // google
     {
         path: '/google',
         element: <Google></Google>,
-        loader: () => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/google`)
+        loader: () => fetch(`http://localhost:5000/google`)
     },
     {
         path: '/googleDetail/:id',
         element: <PrivateRoute><GoogleDetail></GoogleDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/google/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/google/${params.id}`)
     },
     {
         path: '/updateGoogle/:id',
         element: <PrivateRoute><UpdateGoogle></UpdateGoogle></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/google/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/google/${params.id}`)
     },
 
     // samsung
     {
         path: '/samsung',
         element: <Samsung></Samsung>,
-        loader: () => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/samsung`)
+        loader: () => fetch(`http://localhost:5000/samsung`)
     },
     {
         path: '/samsungDetail/:id',
         element: <PrivateRoute><SamsungDetail></SamsungDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/samsung/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
     },
     {
         path: '/updateSamsung/:id',
         element: <PrivateRoute><UpdateSamsung></UpdateSamsung></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/samsung/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
     },
 
 
@@ -116,53 +115,40 @@ const Router = createBrowserRouter([
     {
         path: '/intel',
         element: <Intel></Intel>,
-        loader: () => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/intel`)
+        loader: () => fetch(`http://localhost:5000/intel`)
     },
     {
         path: '/intelDetail/:id',
         element: <PrivateRoute><IntelDetail></IntelDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/intel/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
     },
     {
         path: '/UpdateIntel/:id',
         element: <PrivateRoute><UpdateIntel></UpdateIntel></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/intel/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/intel/${params.id}`)
     },
 
     // sony
     {
         path: '/sony',
         element: <Sony></Sony>,
-        loader: () => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/sony`)
+        loader: () => fetch(`http://localhost:5000/sony`)
     },
     {
         path: '/sonyDetail/:id',
         element: <PrivateRoute><SonyDetail></SonyDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/sony/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
     },
     {
         path: '/UpdateSony/:id',
         element: <PrivateRoute><UpdateSony></UpdateSony></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-havqq095v-tanjil-ahameds-projects.vercel.app/sony/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
     },
 
     {
         path: '/mi',
-        element: <Mi></Mi>,
-        loader: () => fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/mi`)
+        element: <Mi></Mi>
     },
-    {
-        path: '/miDetail/:id',
-        element: <PrivateRoute><MiDetail></MiDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/mi/${params.id}`)
-    },
-    {
-        path: '/UpdateMi/:id',
-        element: <PrivateRoute><UpdateMi></UpdateMi></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://mujan-store-server-site-n35imyva9-tanjil-ahameds-projects.vercel.app/mi/${params.id}`)
-    },
-
-
 ])
 
 export default Router;
