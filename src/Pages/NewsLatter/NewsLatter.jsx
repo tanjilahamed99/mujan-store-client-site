@@ -11,7 +11,7 @@ const NewsLatter = () => {
         const email = data.email
         console.log(email)
 
-        axios.post('http://localhost:5000/newsLatter', { email })
+        axios.post('https://mujan-store-server-site.vercel.app/newsLatter', { email })
             .then(res => {
                 if (res.data) {
                     Swal.fire({
@@ -28,7 +28,7 @@ const NewsLatter = () => {
 
 
     return (
-        <div className="hero h-[70vh] my-10" style={{ backgroundImage: 'url(https://i.ibb.co/51X7jsc/korie-cull-Iz-IME1jwj-CY-unsplash.jpg)' }}>
+        <div className="hero h-[70vh] my-10 bg-fixed" style={{ backgroundImage: 'url(https://i.ibb.co/ymCQwfg/mujan-news.jpg)' }}>
             <div className="hero-overlay bg-opacity-80"></div>
             <div className="hero-content w-full text-center text-neutral-content">
                 <div className="w-[60%] mx-auto">
