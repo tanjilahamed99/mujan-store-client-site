@@ -1,7 +1,7 @@
 const NewArrival = () => {
     return (
         <div>
-            <p className="font-medium text-center text-lg">-- Latest --</p>
+            <p className="font-medium text-center text-sm">-- Latest --</p>
             <h2 className="font-bold text-2xl text-center">New Arrival</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 px-3 lg:grid-cols-4 gap-5 items-center justify-center container mx-auto my-10 '>
                 <div className="shadow-md p-3 hover:shadow-xl shadow-slate-300">
