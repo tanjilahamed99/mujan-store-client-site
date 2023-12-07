@@ -62,16 +62,18 @@ const Navbar = () => {
                 My Cart
             </NavLink>
         </li>
-        <li>
-            <NavLink
-                to="/registration"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "bg-purple-200" : ""
-                }
-            >
-                Registration
-            </NavLink>
-        </li>
+        {
+            !user && <li>
+                <NavLink
+                    to="/registration"
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "bg-purple-200" : ""
+                    }
+                >
+                    Registration
+                </NavLink>
+            </li>
+        }
         <li>
             <NavLink
                 to="/about"

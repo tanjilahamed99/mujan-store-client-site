@@ -1,8 +1,6 @@
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
-
-
     const handleAddProduct = e => {
         e.preventDefault()
         const form = e.target
@@ -13,10 +11,10 @@ const AddProduct = () => {
         const desc = form.desc.value
         const type = form.type.value
         const rating = form.rating.value
-        const newProduct = { name, brand, price, photo, rating, type, desc }
+        const newProduct = { name, brand, price, photo, rating, type,desc }
         console.log(newProduct)
 
-        fetch(`https://mujan-store-server-site-3w2dpawqk-tanjil-ahameds-projects.vercel.app/${brand}`, {
+        fetch(`http://localhost:5000/${brand}`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -32,6 +30,7 @@ const AddProduct = () => {
                         'success'
                     )
                 }
+
             })
     }
 
@@ -60,7 +59,7 @@ const AddProduct = () => {
                         </div>
                         <div className="">
                             <h2>Price</h2>
-                            <input required type="text" name="price" placeholder="1000" className="input text-black input-bordered w-full " />
+                            <input required type="number" name="price" placeholder="1000" className="input text-black input-bordered w-full " />
                         </div>
                         <div className="">
                             <h2>Type</h2>
@@ -68,7 +67,7 @@ const AddProduct = () => {
                         </div>
                         <div className="">
                             <h2>Rating</h2>
-                            <input required name="rating" type="text" placeholder="5" className="input text-black input-bordered w-full " />
+                            <input required name="rating" type="number" placeholder="5" className="input text-black input-bordered w-full " />
                         </div>
                         <div className="">
                             <h2>image URL</h2>
@@ -76,9 +75,9 @@ const AddProduct = () => {
                         </div>
                         <div className="">
                             <h2>short description</h2>
-                            <textarea className="textarea textarea-bordered w-full text-black" placeholder="description"></textarea>
+                            <textarea name="desc" className="textarea textarea-bordered w-full text-black" placeholder="description"></textarea>
                         </div>
-                        <button className="btn col-span-2 btn-accent w-full">Add</button>
+                        <button className="btn col-span-2 btn-accent w-full btn-outline">Add</button>
                     </form>
                 </div>
             </div>
