@@ -9,17 +9,18 @@ const DisplaySony = ({ sony }) => {
     return (
         <div>
             <div className="  bg-base-100 shadow-xl">
-                <div className="flex flex-col lg:flex-row justify-between p-10 items-center">
+                <div className="flex flex-col  lg:flex-row justify-between p-10 items-center">
                     <img className='w-[200px] h-[200px]' src={photo} alt="" />
-                    <div>
+                    <div className='space-y-2'>
                         <h2 className='font-bold text-xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <Rating
+                        className='text-yellow-500'
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-xl'></FaStarHalfAlt>}
                         />
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
 

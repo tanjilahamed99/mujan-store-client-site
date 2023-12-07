@@ -43,22 +43,23 @@ const IntelDetail = () => {
             <Link className="pl-10 " to={'/intel'}><button className="btn my-5 btn-outline">
                 <FaArrowAltCircleLeft className="text-lg"></FaArrowAltCircleLeft>
                 Go back</button></Link>
-            <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
-                <div className="flex p-10 flex-col md:flex-row justify-center my-20 items-center">
+            <div className="bg-base-100 gap-10 w-fit shadow-xl mx-auto rounded-lg">
+                <div className="flex p-10 flex-col gap-5 md:flex-row justify-center my-20 items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
-                    <div>
+                    <div className="space-y-2">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <Rating
+                        className="text-yellow-500"
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-xl'></FaStarHalfAlt>}
                         />
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn">Add to cart</button>
+                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn btn-outline">Add to cart</button>
                     </div>
                 </div>
                 <div className="text-center space-y-2 pb-20">

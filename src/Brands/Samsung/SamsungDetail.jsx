@@ -43,20 +43,21 @@ const SamsungDetail = () => {
                 <FaArrowAltCircleLeft className="text-lg"></FaArrowAltCircleLeft>
                 Go back</button></Link>
             <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
-                <div className="flex flex-col md:flex-row p-10 justify-center my-20 items-center">
+                <div className="flex flex-col gap-5 md:flex-row p-10 justify-center my-20 items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
-                    <div>
+                    <div className="space-y-2">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <Rating
+                        className="text-yellow-500"
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-xl'></FaStarHalfAlt>}
                         />
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn">Add to cart</button>
+                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>${price}</h2>
+                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn btn-outline">Add to cart</button>
                     </div>
                 </div>
                 <div className="text-center space-y-2 pb-20">

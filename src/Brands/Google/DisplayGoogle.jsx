@@ -16,10 +16,11 @@ const DisplayGoogle = ({ google }) => {
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <Rating
+                        className='text-yellow-500'
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-xl'></FaStarHalfAlt>}
                         />
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
 

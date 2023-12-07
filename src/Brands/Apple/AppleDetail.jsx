@@ -14,7 +14,7 @@ const AppleDetail = () => {
 
     const handleAddCart = (name, brand, price, photo, rating, type, desc) => {
 
-        const addCart = { name, brand, price, photo, rating, type, desc,email:user?.email }
+        const addCart = { name, brand, price, photo, rating, type, desc, email: user?.email }
 
         fetch('https://mujan-store-server-site-3w2dpawqk-tanjil-ahameds-projects.vercel.app/cart', {
             method: "POST",
@@ -45,18 +45,19 @@ const AppleDetail = () => {
             <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
                 <div className="flex flex-col md:flex-row p-5 lg::p-10  justify-center my-20 items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
-                    <div className="space-y-2">
+                    <div className="space-y-2 lg:ml-5">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <Rating
+                            className="text-yellow-500"
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-xl'></FaStarHalfAlt>}
                         />
-                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn">Add to cart</button>
+                        <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>${price}</h2>
+                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn btn-outline">Add to cart</button>
                     </div>
                 </div>
                 <div className="text-center space-y-2 pb-20">

@@ -14,7 +14,7 @@ const SonyDetail = () => {
 
     const handleAddCart = (name, brand, price, photo, rating, type, desc) => {
 
-        const addCart = { name, brand, price, photo, rating, type, desc, email: user?.email }
+        const addCart = { name, brand, price, photo, rating, type, desc, email: user?.emailjs }
         console.log(addCart)
 
         fetch('https://mujan-store-server-site-3w2dpawqk-tanjil-ahameds-projects.vercel.app/cart', {
@@ -44,22 +44,23 @@ const SonyDetail = () => {
             <Link className="pl-10 " to={'/sony'}><button className="btn my-5 btn-outline">
                 <FaArrowAltCircleLeft className="text-lg"></FaArrowAltCircleLeft>
                 Go back</button></Link>
-            <div className="bg-base-100 w-fit shadow-xl mx-auto rounded-lg">
+            <div className="bg-base-100 w-fit  shadow-xl mx-auto rounded-lg">
                 <div className="flex flex-col md:flex-row gap-5 p-10 justify-center my-20 items-center">
                     <img className='w-[300px] h-[300px]' src={photo} alt="" />
-                    <div>
+                    <div className="space-y-2">
                         <h2 className='font-bold text-2xl'>Name: {name}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Brand:</span>{brand}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Type:</span>{type}</h2>
                         <Rating
+                        className="text-yellow-500"
                             placeholderRating={rating}
-                            emptySymbol={<AiOutlineStar className='xl'></AiOutlineStar>}
-                            placeholderSymbol={<AiTwotoneStar className='xl'></AiTwotoneStar>}
-                            fullSymbol={<FaStarHalfAlt className='xl'></FaStarHalfAlt>}
+                            emptySymbol={<AiOutlineStar className='text-xl'></AiOutlineStar>}
+                            placeholderSymbol={<AiTwotoneStar className='text-xl'></AiTwotoneStar>}
+                            fullSymbol={<FaStarHalfAlt className='text-xl'></FaStarHalfAlt>}
                         />
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Rating:</span>{rating}</h2>
                         <h2 className='text-lg flex gap-1'><span className='font-semibold'>Price:</span>{price}</h2>
-                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn">Add to cart</button>
+                        <button onClick={() => handleAddCart(name, brand, price, photo, rating, type)} className="btn btn-outline">Add to cart</button>
                     </div>
                 </div>
                 <div className="text-center space-y-2 pb-20">
